@@ -26,14 +26,14 @@ const ProblemForm = ({ onAdd, token }) => {
       status
     };
 
-    const response = await fetch('https://codevault-cs1i.onrender.com/api/users/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${token}` 
-      },
-      body: JSON.stringify(newProblem)
-    });
+const response = await fetch('https://codevault-cs1i.onrender.com/api/problems', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+    Authorization: `Bearer ${token}` 
+  },
+  body: JSON.stringify(newProblem)
+});
 
     if (response.ok) {
       const addedProblem = await response.json();
