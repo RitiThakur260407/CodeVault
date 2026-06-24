@@ -1,0 +1,136 @@
+:root {
+  --bg-color: #f4f7f6;
+  --text-color: #333;
+  --card-bg: white;
+  --input-bg: white;
+  --border-color: #ccc;
+  --heading-color: #2c3e50;
+}
+
+[data-theme='dark'] {
+  --bg-color: #1a1a1a;
+  --text-color: #e0e0e0;
+  --card-bg: #2d2d2d;
+  --input-bg: #3d3d3d;
+  --border-color: #555;
+  --heading-color: #ffffff;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 20px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.app-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 40px;
+  color: var(--text-color);
+}
+
+.problem-form {
+  background: var(--card-bg);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  margin-bottom: 40px;
+}
+
+.input-group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+input, select {
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  background-color: var(--input-bg);
+  color: var(--text-color);
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.problem-grid {
+  display: grid;
+  gap: 15px;
+}
+
+.problem-card {
+  background: var(--card-bg);
+  padding: 15px;
+  border-radius: 8px;
+  border-left: 5px solid #28a745;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.problem-card h3 {
+  margin-top: 0;
+  color: var(--heading-color);
+}
+
+.status-badge, .difficulty-badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.85em;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+
+.easy { background-color: #d4edda; color: #155724; }
+.medium { background-color: #fff3cd; color: #856404; }
+.hard { background-color: #f8d7da; color: #721c24; }
+
+
+.solved { background-color: #d4edda; color: #155724; }
+.upsolve { background-color: #f8d7da; color: #721c24; }
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.delete-btn {
+  background-color: #dc3545;
+  padding: 6px 12px;
+  font-size: 0.85em;
+}
+
+.delete-btn:hover {
+  background-color: #c82333;
+}
+
+.filter-controls {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.search-bar { flex: 1; }
+.status-filter { background-color: var(--input-bg); }
