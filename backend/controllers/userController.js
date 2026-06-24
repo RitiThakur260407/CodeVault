@@ -1,7 +1,7 @@
-const jwt = require('jsonwebtoken');
+\const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 
-const user = require('../models/user');
+const User = require('../models/user');
 
 const generateToken = (id) => {
     return jwt.sign({ id }, process.env.JWT_SECRET, {
@@ -18,7 +18,7 @@ const registerUser = async (req, res) => {
             return res.status(400).json({ message: 'Please add all fields' });
         }
 
-        const userExists = await user.findOne({ email });
+        const userExists = await User.findOne({ email });
         if (userExists) {
             return res.status(400).json({ message: 'User already exists' });
         }
@@ -26,7 +26,7 @@ const registerUser = async (req, res) => {
         const salt = await bcrypt.genSalt(10);
         const hashedPassword = await bcrypt.hash(password, salt);
 
-        const user = await user.create({
+        const user = await User.create({
             name,
             email,
             password: hashedPassword,
